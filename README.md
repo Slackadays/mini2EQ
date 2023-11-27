@@ -1,22 +1,22 @@
 # mini2EQ
 
-**mini2EQ** is a little program that lets you convert a miniDSP calibration microphone's factory calibration file to an equalizer preset that you can import to your favorite software.
+**mini2EQ** is a cute little program that lets you convert a miniDSP calibration microphone's factory calibration file to an equalizer preset that you can import to your favorite software.
 
 ## The Problem
 
-I want to use one of MDSP's [calibration mics](https://www.minidsp.com/products/acoustic-measurement/umik-1) to ensure a flat response in my sound systems. To make sure these mics are perfectly flat, you can get a factory calibration file customized for your exact microphone. Unfortunately, I couldn't get this data working in any of my favorite free and open-source software using a more common format, so I just made mini2EQ to do this conversion for me.
+I want to use one of MDSP's [calibration mics](https://www.minidsp.com/products/acoustic-measurement/umik-1) to ensure a flat response in my sound systems. To make sure these mics are perfectly flat, you can get a factory calibration file customized for your exact one. Unfortunately, I couldn't get this data working in any of my favorite free and open-source software using a more common format, so I just made mini2EQ to do this conversion for me.
 
-Now, you can use this calibration file in anything that supports its output formats (currently APO), such as EasyEffects and Peace EQ.
+With mini2EQ, you can now use this calibration file in anything that supports its output formats, such as EasyEffects and Peace EQ.
 
 ## Prerequisite
 
-mini2EQ requires at least Python 3.7 to run.
+You'll need at least Python 3.7 to run mini2EQ.
 
 ## How To Use
 
 ### 1. Download
 
-Click the `mini2eq.py` file in GitHub and use the download button on its page to download it.
+Click the `mini2eq.py` file here in GitHub and use the download button on its page to download it.
 
 ### 2. Run it
 
@@ -32,8 +32,8 @@ Replace `(format)` with one of the available formats below:
 
 Optionally, add any of the options below:
 
-- Number of EQ bands: `--bands n`
-- Custom output file: `--output file`
+- Number of EQ bands: `--bands <n>`
+- Custom output file: `--output <file>`
 
 ### 3. Import the result
 
