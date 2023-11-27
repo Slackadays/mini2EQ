@@ -104,7 +104,7 @@ def calibration_data(file: str) -> list[float, float]:
         if line.startswith("\"") or line[0].isalpha():
             continue
         else:
-            hertz_db.append(line.strip().split("\t"))
+            hertz_db.append(line.strip().split())
 
     for i in range(len(hertz_db)):
         hertz_db[i][0] = float(hertz_db[i][0]) # convert the hertz value to a float
