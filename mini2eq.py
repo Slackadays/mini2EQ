@@ -6,6 +6,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import sys
+import os
 
 def main():
     output_format = ""
@@ -17,6 +18,10 @@ def main():
     output_file = ""
 
     if "--output" in sys.argv:
+        if sys.argv.index("--output") + 1 >= len(sys.argv):
+            print("Error! Output file name is missing.")
+            return 1
+
         output_file = sys.argv[sys.argv.index("--output") + 1]
         sys.argv.remove("--output")
         sys.argv.remove(output_file)
@@ -24,24 +29,34 @@ def main():
     bands = 0
 
     if "--bands" in sys.argv:
+        if sys.argv.index("--bands") + 1 >= len(sys.argv):
+            print("Error! Number of EQ bands is missing.")
+            return 1
+
         bands = int(sys.argv[sys.argv.index("--bands") + 1])
+
         if bands < 2:
             print("Error! Number of EQ bands must be greater than 1.")
-            return
+            return 1
+
         sys.argv.remove("--bands")
         sys.argv.remove(str(bands))
 
     if len(sys.argv) < 2 or output_format == "":
         print_help_message()
-        return
+        return 1
 
     input_file = sys.argv[1]
+
+    if not os.path.isfile(input_file):
+        print("Error! Input file {} doesn't exist.".format(input_file))
+        return 1
 
     hertz_db = calibration_data(input_file)
 
     if bands > len(hertz_db):
         print("Error! Number of EQ bands must be less than or equal to the number of hertz values in the calibration file.")
-        return
+        return 1
 
     if bands != 0:
         # now compress the data into the number of bands specified
