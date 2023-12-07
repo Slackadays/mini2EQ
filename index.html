@@ -5,13 +5,8 @@
     <title>mini2EQ - Convert your miniDSP calibration mic data to an EQ preset</title>
     <style>
         @font-face {
-            font-family: 'Kalam-Bold';
-            src: url('fonts/Kalam-Bold.woff2');
-        }
-
-        @font-face {
             font-family: 'Inter';
-            src: url('fonts/Inter-VariableFont_slnt,wght.woff2');
+            src: url('assets/Inter-VariableFont_slnt,wght.woff2');
         }
 
         body, html {
@@ -30,13 +25,7 @@
             background-color: rgba(0, 0, 0, 0.1);
             box-shadow: 10px 0px 90px 10px rgba(0, 0, 0, 0.2), -10px 0px 90px 10px rgba(0, 0, 0, 0.2);
             font-family: 'Inter', sans-serif;
-            font-size: 1.6em;
-        }
-
-        h2 {
-            font-family: 'Kalam-Bold', sans-serif;
-            font-size: 2em;
-            margin: 0;
+            font-size: 1.5em;
         }
 
         pre {
@@ -53,11 +42,15 @@
             text-decoration: none;
         }
 
-        @media only screen and (max-width: 800px) {
+        input, select, button {
+            font-size: .75em;
+        }
+
+        @media only screen and (max-width: 1000px) {
             div.converter {
                 max-width: 100%;
                 padding: 3%;
-                font-size: 1.3em;
+                font-size: 2.4em;
             }
         }
     </style>
@@ -65,11 +58,16 @@
 </html>
 <body>
     <div class="converter">
-        <h2>
-            mini2EQ
-        </h2>
+        <img src="assets/mini2EQ-bakedin.svg" width="250px">
+        <br>
 
         <b>Convert your miniDSP calibration mic data to an EQ preset!</b>
+
+        <h3>The Problem</h3>
+
+        I want to use one of MDSP's <a href="https://www.minidsp.com/products/acoustic-measurement/umik-1">calibration mics</a> to ensure a flat response in my sound systems. To make sure these mics are perfectly flat, you can get a factory calibration file customized for your exact one. Unfortunately, I couldn't get this data working in any of my favorite free and open-source software using a more common format, so I just made mini2EQ to do this conversion for me.
+        <br><br>
+        With mini2EQ, you can now use this calibration file in anything that supports its output formats, such as EasyEffects and Peace EQ.
 
         <br><br>
 
@@ -104,7 +102,7 @@
         </form>
         <script src="mini2eq.js"></script>
 
-        This converter was made by <a href="https://github.com/Slackadays">Jackson Huff.</a>
+        This converter is courtesy of <a href="https://github.com/Slackadays">Jackson Huff.</a>
     </div>
 </body>
 </html>
