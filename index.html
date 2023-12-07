@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mini2EQ - Convert your miniDSP calibration mic data to an EQ preset</title>
+    <style>
+        @font-face {
+            font-family: 'Kalam-Bold';
+            src: url('fonts/Kalam-Bold.woff2');
+        }
+
+        @font-face {
+            font-family: 'Inter';
+            src: url('fonts/Inter-VariableFont_slnt,wght.woff2');
+        }
+
+        body, html {
+            background: #11998e;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            height: 100%;
+            margin: 0;
+        }
+
+        div.converter {
+            max-width: 50%;
+            margin: 0 auto;
+            padding: 5%;
+            padding-bottom: 25vh;
+            background-color: rgba(0, 0, 0, 0.1);
+            box-shadow: 10px 0px 90px 10px rgba(0, 0, 0, 0.2), -10px 0px 90px 10px rgba(0, 0, 0, 0.2);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.6em;
+        }
+
+        h2 {
+            font-family: 'Kalam-Bold', sans-serif;
+            font-size: 2em;
+            margin: 0;
+        }
+
+        pre {
+            white-space: pre-line;
+            overflow: scroll;
+            max-height: 40vh;
+            height: 40vh;
+            padding: 1em;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @media only screen and (max-width: 600px) {
+            div.converter {
+                max-width: 100%;
+                padding: 3%;
+                font-size: 1.3em;
+            }
+        }
+    </style>
+
+</html>
+<body>
+    <div class="converter">
+        <h2>
+            mini2EQ
+        </h2>
+
+        <b>Convert your miniDSP calibration mic data to an EQ preset!</b>
+
+        <br><br>
+
+        This converter is free and open source. <a href="https://github.com/Slackadays/mini2EQ">Click here to check out the code</a> or use the local Python version instead!
+
+        <br><br>
+
+        <form name="converter">
+            <label for="file">Your calibration file:</label>
+            <input type="file" id="file" name="file" accept=".txt">
+            <br>
+            <label for="format">Output EQ format:</label>
+            <select name="format" id="format">
+                <option value="apo">APO</option>
+            </select>
+            <br>
+            <label for="eq-bands">Number of EQ bands:</label>
+            <select name="eq-bands" id="eq-bands">
+                <option value="all">All bands</option>
+            </select>
+
+            <br>
+
+            <pre>
+                <output id="originalContent">A preview of your original file will appear here.</output>
+            </pre>
+
+            Here is your EQ preset! <button type="button" onclick="download_preset()">Download EQ preset</button>
+            <pre>
+                <output id="eqContent">A preview of your EQ preset file will appear here.</output>
+            </pre>
+        </form>
+        <script src="mini2eq.js"></script>
+
+        This converter was made by <a href="https://github.com/Slackadays">Jackson Huff.</a>
+    </div>
+</body>
+</html>
