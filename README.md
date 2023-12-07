@@ -1,6 +1,6 @@
 # mini2EQ
 
-**mini2EQ** is a cute little program that lets you convert a miniDSP calibration microphone's factory calibration file to an equalizer preset that you can import to your favorite software.
+**mini2EQ** is a cute little website and standalone program that let you convert a miniDSP calibration microphone's factory calibration file to an equalizer preset that you can import to your favorite software.
 
 ## The Problem
 
@@ -10,9 +10,11 @@ With mini2EQ, you can now use this calibration file in anything that supports it
 
 ## Prerequisite
 
-You'll need at least Python 3.7 to run mini2EQ.
+You'll need at least Python 3.7 to run mini2EQ locally.
 
 ## How To Use
+
+Only read this section if you're using the local Python version of mini2EQ.
 
 ### 1. Download
 
