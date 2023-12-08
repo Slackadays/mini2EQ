@@ -141,10 +141,10 @@ function generate_apo(data) {
 
 function q_setting(previous, current, next) {
     if (previous == null)
-        return current / (next - current);
+        return current / (2 * (next - current));
 
     if (next == null)
-        return current / (current - previous);
+        return current / (2 * (current - previous));
 
     return current / (next - previous);
 }

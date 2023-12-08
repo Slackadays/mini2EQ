@@ -159,11 +159,11 @@ def q_setting(previous: float, current: float, next: float) -> float:
 
     # if the previous hertz value is 0, then calculate it based on the current and next hertz values
     if previous == None:
-        return current / (next - current)
+        return current / (2 * (next - current))
 
     # if the next hertz value is 0, then calculate it based on the current and previous hertz values
     if next == None:
-        return current / (current - previous)
+        return current / (2 * (current - previous))
 
     # otherwise, calculate it based on the previous and next hertz values
     return current / (next - previous)
