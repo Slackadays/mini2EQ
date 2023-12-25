@@ -134,7 +134,7 @@ function generate_apo(data) {
 
         q = q_setting(previous, data[i][0], next);
 
-        content = content.concat("Filter: " + (i + 1) + " ON PK Fc " + data[i][0] + " Hz Gain " + data[i][1] + " dB Q " + q + "\n");
+        content = content.concat("Filter " + (i + 1) + ": ON PK Fc " + data[i][0] + " Hz Gain " + data[i][1] + " dB Q " + q + "\n");
     }
     return content;
 }
